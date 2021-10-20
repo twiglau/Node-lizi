@@ -7,6 +7,9 @@ bin-release/
 # Other files and folders
 .settings/
 
+test/sequelize-test/node_modules
+code/weibo-code/node_modules
+
 # Executables
 *.swf
 *.air
