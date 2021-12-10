@@ -4,7 +4,7 @@
  */
 const seq = require('./seq')
 
-// require('./model/index')
+require('./model/index')
 
 // 测试链接
 seq

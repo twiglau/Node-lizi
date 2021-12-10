@@ -1,15 +1,9 @@
 /**
  * @description: res的数据模型
- * @author: 小康
- * @url: https://xiaokang.me
- * @Date: 2020-12-17 14:44:52
- * @LastEditTime: 2020-12-17 14:44:52
- * @LastEditors: 小康
+ * @author: lau
  */
 
 /**
- * @author: 小康
- * @url: https://xiaokang.me
  * @description: 基础模块
  */
 class BaseModel {
@@ -25,8 +19,6 @@ class BaseModel {
 }
 
 /**
- * @author: 小康
- * @url: https://xiaokang.me
  * @description: 成功的模型
  */
 class SuccessModel extends BaseModel {
@@ -39,8 +31,6 @@ class SuccessModel extends BaseModel {
 }
 
 /**
- * @author: 小康
- * @url: https://xiaokang.me
  * @description: 失败的模型
  */
 class ErrorModel extends BaseModel {

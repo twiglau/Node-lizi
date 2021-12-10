@@ -14,6 +14,8 @@ const { isProd } = require('./utils/env')
 const { SESSION_SECRET_KEY } = require('./config/secretKeys')
 const koaStatic = require('koa-static')
 
+const userViewRouter = require('./routes/view/user')
+const userAPIRouter = require('./routes/api/user')
 const errorViewRouter = require('./routes/view/error')
 // error handler
 let onErrorConfig = {}
@@ -57,6 +59,8 @@ app.use(
 )
 
 // routes
+app.use(userViewRouter.routes(),userViewRouter.allowedMethods())
+app.use(userAPIRouter.routes(),userAPIRouter.allowedMethods())
 //404路由一定注册在最后,(放在最后)
 app.use(errorViewRouter.routes(),errorViewRouter.allowedMethods())
 // error-handling

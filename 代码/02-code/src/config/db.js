@@ -26,7 +26,7 @@ if (process.env === 'dev') {
     host: 'localhost',
     dialect: 'mysql',
     user: 'root',
-    password: 'root',
+    password: 'Lzy1990052812',
     port: '3306',
     database: 'koa2_weibo_db'
   }
@@ -39,7 +39,7 @@ if (process.env === 'dev') {
     host: 'localhost',
     dialect: 'mysql',
     user: 'root',
-    password: 'root',
+    password: 'Lzy1990052812',
     port: '3306',
     database: 'koa2_weibo_db'
   }

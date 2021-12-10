@@ -1,10 +1,6 @@
 /**
  * @description: 失败信息集合
- * @author: 小康
- * @url: https://xiaokang.me
- * @Date: 2020-12-17 14:54:07
- * @LastEditTime: 2020-12-17 14:54:08
- * @LastEditors: 小康
+ * @author: lau
  */
 
 module.exports = {
