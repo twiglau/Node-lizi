@@ -14,6 +14,7 @@ const { isProd } = require('./utils/env')
 const { SESSION_SECRET_KEY } = require('./config/secretKeys')
 const koaStatic = require('koa-static')
 
+const utilsAPIRouter = require('./routes/api/utils')
 const userViewRouter = require('./routes/view/user')
 const userAPIRouter = require('./routes/api/user')
 const errorViewRouter = require('./routes/view/error')
@@ -33,6 +34,7 @@ app.use(
 app.use(json())
 app.use(logger())
 app.use(koaStatic(__dirname + '/public'))
+app.use(koaStatic(path.join(__dirname,'..','uploadFiles')))
 
 app.use(
   views(__dirname + '/views', {
@@ -59,6 +61,7 @@ app.use(
 )
 
 // routes
+app.use(utilsAPIRouter.routes(),utilsAPIRouter.allowedMethods())
 app.use(userViewRouter.routes(),userViewRouter.allowedMethods())
 app.use(userAPIRouter.routes(),userAPIRouter.allowedMethods())
 //404路由一定注册在最后,(放在最后)
