@@ -1,10 +1,6 @@
 /**
  * @description: 微博缓存层
- * @author: 小康
- * @url: https://xiaokang.me
- * @Date: 2020-12-19 14:53:13
- * @LastEditTime: 2020-12-19 14:53:13
- * @LastEditors: 小康
+ * @author: lau
  */
 
 const { get, set } = require('./_redis')
@@ -15,11 +11,9 @@ const { getBlogListByUser } = require('../services/blog')
 const KEY_PREFIX = 'weibo:square'
 
 /**
- * @author: 小康
- * @url: https://xiaokang.me
+ * 获取广场列表的缓存
  * @param {*} pageIndex
  * @param {*} pageSize
- * @description: 获取广场列表的缓存
  */
 async function getSquareCacheList(pageIndex, pageSize) {
   const key = `${KEY_PREFIX}${pageIndex}_${pageSize}`
