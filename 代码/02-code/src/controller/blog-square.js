@@ -14,7 +14,7 @@ const { getSquareCacheList } = require('../cache/blog')
 async function getSquareBlogList(pageIndex = 0) {
     // 1. 访问Cache 层
     const result = await getSquareCacheList(pageIndex,PAGE_SIZE)
-    const blogList = result.blogList
+    const blogList = result.getSquareBlogList
 
     // 拼接返回数据
     return new SuccessModel({
