@@ -1,10 +1,6 @@
 /**
  * @description: 微博数据相关的工具方法
- * @author: 小康
- * @url: https://xiaokang.me
- * @Date: 2020-12-19 11:30:22
- * @LastEditTime: 2020-12-19 11:30:22
- * @LastEditors: 小康
+ * @author: lau
  */
 
 const fs = require('fs')
@@ -17,8 +13,6 @@ const BLOG_LIST_TPL = fs
   .toString()
 
 /**
- * @author: 小康
- * @url: https://xiaokang.me
  * @param {Array} blogList 微博列表
  * @param {Boolean} canReply 是否可以回复
  * @description: 根据blogList渲染出HTML字符串

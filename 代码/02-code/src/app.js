@@ -14,12 +14,14 @@ const { isProd } = require('./utils/env')
 const { SESSION_SECRET_KEY } = require('./config/secretKeys')
 const koaStatic = require('koa-static')
 
+const profileAPIRouter = require('./routes/api/blog-profile')
 const homeAPIRouter = require('./routes/api/blog-home')
 const blogViewRouter = require('./routes/view/blog')
 const utilsAPIRouter = require('./routes/api/utils')
 const userViewRouter = require('./routes/view/user')
 const userAPIRouter = require('./routes/api/user')
 const errorViewRouter = require('./routes/view/error')
+
 // error handler
 let onErrorConfig = {}
 if (isProd) {//如果是线上环境出错了,跳转到错误也
@@ -63,6 +65,7 @@ app.use(
 )
 
 // routes
+app.use(profileAPIRouter.routes(),profileAPIRouter.allowedMethods())
 app.use(homeAPIRouter.routes(),homeAPIRouter.allowedMethods())
 app.use(blogViewRouter.routes(),blogViewRouter.allowedMethods())
 app.use(utilsAPIRouter.routes(),utilsAPIRouter.allowedMethods())
