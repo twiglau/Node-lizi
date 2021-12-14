@@ -1,10 +1,6 @@
 /**
  * @description:
- * @author: 小康
- * @url: https://xiaokang.me
- * @Date: 2020-12-19 10:54:11
- * @LastEditTime: 2020-12-19 10:54:12
- * @LastEditors: 小康
+ * @author: lau
  */
 
 const { format } = require('date-fns')

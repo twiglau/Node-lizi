@@ -6,7 +6,9 @@
 const xss = require('xss')
 const { createBlogFailInfo } = require('../model/ErrorInfo')
 const { SuccessModel, ErrorModel } = require('../model/ResModel')
-const { createBlog } = require('../services/blog')
+const { createBlog ,getFollowersBlogList} = require('../services/blog')
+const { PAGE_SIZE } = require('../config/constant')
+const { getFollowersByUser } = require('../services/user-relation')
 
 /**
  * 创建微博
@@ -30,6 +32,33 @@ async function create({ userId,content,image }) {
 
 }
 
+/**
+ * 获取首页微博数据
+ * @param {number} userId 
+ * @param {number} pageIndex 
+ */
+async function getHomeBlogList(userId,pageIndex = 0){
+    const result = await getFollowersBlogList(
+        {
+            userId,
+            pageIndex,
+            pageSize:PAGE_SIZE
+        }
+    )
+    const { count,blogList } = result
+
+    // 返回
+    return new SuccessModel({
+        isEmpty:blogList.length === 0,
+        blogList,
+        pageSize:PAGE_SIZE,
+        pageIndex,
+        count
+    })
+
+
+}
 module.exports = {
-    create
+    create,
+    getHomeBlogList
 }
