@@ -48,7 +48,7 @@ router.get('/profile/:userName',loginRedirect,async (ctx,next) => {
     // 获取粉丝
     // controller
     const fansResult = await getFans(curUserInfo.id)
-    const {count: fansCount, userList: fansList } = fansResult.data
+    const {count: fansCount, fansList } = fansResult.data
 
     // 获取关注人列表
     // controller

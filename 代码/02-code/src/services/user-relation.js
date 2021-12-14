@@ -31,7 +31,7 @@ async function getUsersByFollower(followerId){
     userList = formatUser(userList)
 
     return {
-        count: userList.count,
+        count: result.count,
         userList
     }
 

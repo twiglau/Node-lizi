@@ -21,7 +21,7 @@ async function getFans(userId){
     // 返回
     return new SuccessModel({
         count,
-        userList
+        fansList: userList
     })
 
 }
