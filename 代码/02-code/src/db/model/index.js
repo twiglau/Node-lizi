@@ -17,6 +17,14 @@ UserRelation.belongsTo(User,{
 User.hasMany(UserRelation,{
     foreignKey:'userId'
 })
+// 现在向建立以下关系, 数据库显示并没有显示建立
+// 理由 Blog 已经通过 userId 与 User 表建立关系
+// 但是,并不影响 Blog 表 与 UserRelation 表的连表查询
+Blog.belongsTo(UserRelation,{
+    foreignKey: 'userId',
+    targetKey: 'followerId'
+})
+
 module.exports = {
     User,
     Blog,
