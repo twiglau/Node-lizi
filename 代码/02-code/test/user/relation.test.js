@@ -68,7 +68,6 @@ test('获取lau1 的 at 列表, 应该有 twig1', async () => {
         return item.indexOf(`- ${L_USER_NAME}` > 0)
     })
     expect(hasUserName).toBe(true)
-
 })
 // 取消关注
 test('lau1 取消关注 twig1, 应该成功', async () => {

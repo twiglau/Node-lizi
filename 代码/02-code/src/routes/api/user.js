@@ -34,7 +34,6 @@ router.post('/isExist',async (ctx,next) => {
     const { userName } = ctx.request.body
     // controller 处理
     ctx.body = await isExist(userName)
-
 })
 
 // 登录
