@@ -107,7 +107,6 @@ async function updateAtRelation(
     })
     
     return result[0] > 0
-
 }
 module.exports = {
     createAtRelation,
